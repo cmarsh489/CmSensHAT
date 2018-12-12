@@ -20,8 +20,9 @@ R = [255, 0, 0]  # red
 Y = [255, 255, 0] # yellow
 G = [0, 255, 0] # green
 W = [255, 255, 255] # white
-
+Bl=[0,0,0]
 score=0
+
 
 for turns in range(5):
   
@@ -65,13 +66,14 @@ for turns in range(5):
 for turns in range(5):
   coin1x=randint(0,7)
   coin1y=randint(0,7)
+  hits=0
   
   coin2x=randint(0,7)
   coin2y=randint(0,7)
   print(coinx, coiny)
   
   sense.set_pixel(coin1x, coin1y, Y)
-  sense.setpixel(coin2x, coin2y, Y)
+  sense.set_pixel(coin2x, coin2y, Y)
   
   sleep(2)
   sense.clear()
@@ -84,17 +86,39 @@ for turns in range(5):
     e = wait_for_move()
     if e.direction == DIRECTION_MIDDLE:
       
-      if x == coin1x and y== coin1y:
+      if x == coin1x and y== coin1y :
         sense.set_pixel(x,y,G)
         score+= 1
+        hits += 1
+        sense.set_pixel(coin2x, coin2y, Y)
+        sleep(2)
+        sense.set_pixel(coin2x, coin2y, Bl)
+        
+        
+      elif x == coin2x and y== coin2y :
+        sense.set_pixel(x,y,G)
+        score+= 1
+        hits += 1
+        sense.set_pixel(coin1x, coin1y, Y)
+        sleep(1)
+        sense.set_pixel(coin1x, coin1y, Bl)
+      elif hits ==1 and x == coin2x and y== coin2y :
+        sense.set_pixel(x,y,G)
+        score+= 1
+        hits += 1
+        
       else:
         sense.set_pixel(x,y,R)
-
-    
+        sleep(1)
+        sense.clear
+        break;
       
+
       sleep(1)
       sense.clear()
-      break;
+      if hits == 2:
+          
+          break;
     
     sense.clear()
     if e.direction== DIRECTION_UP and y>0:
