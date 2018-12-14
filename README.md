@@ -1,2 +1,2 @@
 # CmSensHAT
-Python programs for Senase Hat
+Python programs for Sense Hat
