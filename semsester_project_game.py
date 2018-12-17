@@ -43,111 +43,165 @@ sword= [b,b,b,b,b,b,b,b,
         b,b,b,b,b,b,w,b,
         b,b,b,b,b,b,b,b,
         ] #The player's "sprite"
+
+def set_sword():
+    
+    sense.set_pixel(sx1,sy1,w)
+    sense.set_pixel(sx2,sy2,w)
+    sense.set_pixel(sx3,sy3,w)
+    sense.set_pixel(sx4,sy4,w)
+    sense.set_pixel(sx5,sy5,w)
+    sense.set_pixel(sx6,sy6,w)
+    
 def s_up():
-  s_direction=1
-  sx1=6
-  sy1=3
-  sx2=6
-  sy2=4
-  sx3=6
-  sy3=5
-  sx4=6
-  sy4=6
-  sx5=5
-  sy5=5
-  sx6=7
-  sy6=5
-  sense.set_pixel(sx1,sy1,w)
-  sense.set_pixel(sx2,sy2,w)
-  sense.set_pixel(sx3,sy3,w)
-  sense.set_pixel(sx4,sy4,w)
-  sense.set_pixel(sx5,sy5,w)
-  sense.set_pixel(sx6,sy6,w)
+    global sx1
+    global sx2
+    global sx3
+    global sx4
+    global sx5
+    global sx6
+    global sy1
+    global sy2
+    global sy3
+    global sy4
+    global sy5
+    global sy6
+    
+    s_direction=1
+    sx1=6
+    sy1=3
+    sx2=6
+    sy2=4
+    sx3=6
+    sy3=5
+    sx4=6
+    sy4=6
+    sx5=5
+    sy5=5
+    sx6=7
+    sy6=5
+    set_sword()
 
 def s_down():
-  s_direction=2
-  sx1=6
-  sy1=7
-  sx2=6
-  sy2=6
-  sx3=6
-  sy3=5
-  sx4=3
-  sy4=4
-  sx5=5
-  sy5=5
-  sx6=7
-  sy6=5
-  sense.set_pixel(sx1,sy1,w)
-  sense.set_pixel(sx2,sy2,w)
-  sense.set_pixel(sx3,sy3,w)
-  sense.set_pixel(sx4,sy4,w)
-  sense.set_pixel(sx5,sy5,w)
-  sense.set_pixel(sx6,sy6,w)
-
+    global sx1
+    global sx2
+    global sx3
+    global sx4
+    global sx5
+    global sx6
+    global sy1
+    global sy2
+    global sy3
+    global sy4
+    global sy5
+    global sy6
+    
+    s_direction=2
+    sx1=6
+    sy1=7
+    sx2=6
+    sy2=6
+    sx3=6
+    sy3=5
+    sx4=3
+    sy4=4
+    sx5=5
+    sy5=5
+    sx6=7
+    sy6=5
+    set_sword()
 
 def s_right():
-  s_direction=3
-  sx1=7
-  sy1=5
-  sx2=6
-  sy2=5
-  sx3=5
-  sy3=5
-  sx4=4
-  sy4=5
-  sx5=5
-  sy5=4
-  sx6=4
-  sy6=6
-  sense.set_pixel(sx1,sy1,w)
-  sense.set_pixel(sx2,sy2,w)
-  sense.set_pixel(sx3,sy3,w)
-  sense.set_pixel(sx4,sy4,w)
-  sense.set_pixel(sx5,sy5,w)
-  sense.set_pixel(sx6,sy6,w)
+    global sx1
+    global sx2
+    global sx3
+    global sx4
+    global sx5
+    global sx6
+    global sy1
+    global sy2
+    global sy3
+    global sy4
+    global sy5
+    global sy6
+    
+    s_direction=3
+    sx1=7
+    sy1=5
+    sx2=6
+    sy2=5
+    sx3=5
+    sy3=5
+    sx4=4
+    sy4=5
+    sx5=5
+    sy5=4
+    sx6=4
+    sy6=6
+    set_sword()
 
 def s_left():
-  s_direction=4
-  sx1=3
-  sy1=5
-  sx2=4
-  sy2=5
-  sx3=6
-  sy3=5
-  sx4=7
-  sy4=5
-  sx5=5
-  sy5=6
-  sx6=4
-  sy6=4
-  sense.set_pixel(sx1,sy1,w)
-  sense.set_pixel(sx2,sy2,w)
-  sense.set_pixel(sx3,sy3,w)
-  sense.set_pixel(sx4,sy4,w)
-  sense.set_pixel(sx5,sy5,w)
-  sense.set_pixel(sx6,sy6,w)
+    global sx1
+    global sx2
+    global sx3
+    global sx4
+    global sx5
+    global sx6
+    global sy1
+    global sy2
+    global sy3
+    global sy4
+    global sy5
+    global sy6
+    
+    s_direction=4
+    sx1=3
+    sy1=5
+    sx2=4
+    sy2=5
+    sx3=6
+    sy3=5
+    sx4=7
+    sy4=5
+    sx5=5
+    sy5=6
+    sx6=4
+    sy6=4
+    set_sword()
+  
   
 def s_start():
-  s_direction=0
-  sx1=4
-  sy1=5
-  sx2=5
-  sy2=5
-  sx3=6
-  sy3=5
-  sx4=7
-  sy4=5
-  sx5=6
-  sy5=6
-  sx6=6
-  sy6=4
-  sense.set_pixel(sx1,sy1,w)
-  sense.set_pixel(sx2,sy2,y)
-  sense.set_pixel(sx3,sy3,r)
-  sense.set_pixel(sx4,sy4,g)
-  sense.set_pixel(sx5,sy5,bl)
-  sense.set_pixel(sx6,sy6,w)
+    global sx1
+    global sx2
+    global sx3
+    global sx4
+    global sx5
+    global sx6
+    global sy1
+    global sy2
+    global sy3
+    global sy4
+    global sy5
+    global sy6
+    
+    s_direction=0
+    sx1=4
+    sy1=5
+    sx2=5
+    sy2=5
+    sx3=6
+    sy3=5
+    sx4=7
+    sy4=5
+    sx5=6
+    sy5=6
+    sx6=6
+    sy6=4
+    set_sword()
+  
+  
+
+    
   
   
   
@@ -185,10 +239,9 @@ lives=3
 The whole game will be set 90 degrees counterclockwise because thatll make it easier to play with all the connections. An arrow with a random direction will come down the screen slowly, and the player has to match that dierction with the joystick when it reaches them, and if they miss, they get a strike.
 The arrows will get continously more frequent and faster moving, adding to the difficulty of the game. More to add later"""
 sense.set_rotation(90)
-sense.set_pixels(sword)
-sleep(1)
+
 for turns in range(2):
-  print "Hi"
+  print ("Hi")
   
 def arrow_up():
   global y1
@@ -277,7 +330,7 @@ def directional():
 
 score=0
 for turns in range(3):
-  print "yo"
+  print ("yo")
   a_direction= randint(1,4)
   if a_direction==1:
     arrow_up()
@@ -287,14 +340,15 @@ for turns in range(3):
     arrow_right()
   if a_direction== 4:
     arrow_right()
-  print a_direction
-  print y1
+  print (a_direction)
+  print ("It's " + str(y1))
   
   def move_down(time):
     global y1
     global y2
     global y3
     while True:
+      set_sword()
       y1 += 1
       y2 += 1
       y3 += 1
@@ -303,8 +357,38 @@ for turns in range(3):
       sense.set_pixel(x3,y3,r)
       sleep(time)
       sense.clear()
-      if y2>6:
+      if y3==7 or y1==7:
+        
         break;
+      e = wait_for_move()
+     if e.direction== DIRECTION_UP:
+            
+        s_up()
+     elif e.direction == DIRECTION_DOWN:
+        
+         s_down()
+     elif e.direction == DIRECTION_LEFT:
+         s_left()
+     elif e.direction == DIRECTION_RIGHT:
+         s_right()
+          
+     if e.direction == DIRECTION_MIDDLE and s_direction == a_direction and y2==6:
+         score+=1
+         sense.clear()
+         break
+     elif y2!=6 and e.direction == DIRECTION_MIDDLE:
+         lives -= 1
+         sense.show_message("Lives = " +str(lives), scroll_speed= .02, text_colour=r)
+          
+         sense.clear()
+            
+     else:
+            sense.clear()
+        if y3 ==7 or y1==7:
+            lives -= 1
+            sense.show_message("Lives = " +str(lives), scroll_speed= .02, text_colour=r)
+            break;
+            
   
  
     
@@ -326,39 +410,40 @@ for turns in range(3):
   while True:
     sense.clear()
     s_start()
-    print "hi"
-    move_down(2) 
-    
+    print ("hi")
+    move_down(2)
    
     
     
-    if x1==12:
-      e = wait_for_move()
-      if e.direction== DIRECTION_UP:
-        s_up()
-      elif e.direction == DIRECTION_DOWN:
-        s_down()
-      elif e.direction == DIRECTION_LEFT and x>0:
-        s_left()
-      elif e.direction == DIRECTION_RIGHT and x<7:
-        s_right()
-      
-      if e.direction == DIRECTION_MIDDLE and s_direction == a_direction and y2==6:
-        score+=1
-        sense.clear()
-        break
-      elif y2!=6 and e.direction == DIRECTION_MIDDLE:
-        lives -= 1
-        sense.show_message("Lives = " +str(lives), scroll_speed= .01, text_colour=r)
-      
-        sense.clear()
+    while True:
+        e = wait_for_move()
+        if e.direction== DIRECTION_UP:
+            
+            s_up()
+        elif e.direction == DIRECTION_DOWN:
         
-      else:
-        sense.clear()
-    if y2 ==6:
-        lives -= 1
-        sense.show_message("Lives = " +str(lives), scroll_speed= .01, text_colour=r)
-        break;
+            s_down()
+        elif e.direction == DIRECTION_LEFT:
+            s_left()
+        elif e.direction == DIRECTION_RIGHT:
+            s_right()
+          
+        if e.direction == DIRECTION_MIDDLE and s_direction == a_direction and y2==6:
+            score+=1
+            sense.clear()
+            break
+        elif y2!=6 and e.direction == DIRECTION_MIDDLE:
+            lives -= 1
+            sense.show_message("Lives = " +str(lives), scroll_speed= .02, text_colour=r)
+          
+            sense.clear()
+            
+        else:
+            sense.clear()
+        if y3 ==7 or y1==7:
+            lives -= 1
+            sense.show_message("Lives = " +str(lives), scroll_speed= .02, text_colour=r)
+            break;
+            
+          
         
-      
-    
