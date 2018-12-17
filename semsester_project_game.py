@@ -12,6 +12,8 @@ def wait_for_move():
     e = sense.stick.wait_for_event()
     if e.action != ACTION_RELEASED:
       return e
+      
+
 
 #Colors list
 r = [255, 0, 0]  # red
@@ -68,16 +70,33 @@ y1=0
 y2=1
 y3=2
 
+
+
 """My idea with this is to make a game that has different direction arrows that come at you, and you have to match the direction to "beat" the arrow, much like that tower game I used to play.
 The whole game will be set 90 degrees counterclockwise because thatll make it easier to play with all the connections. An arrow with a random direction will come down the screen slowly, and the player has to match that dierction with the joystick when it reaches them, and if they miss, they get a strike.
 The arrows will get continously more frequent and faster moving, adding to the difficulty of the game. More to add later"""
 sense.set_rotation(90)
 sense.set_pixels(sword)
 sleep(1)
+for turns in range(2):
+  print "Hi"
+  if y1==4:
+    print "Hello"
 
-
-for turns in range(5):
+for turns in range(3):
   a_direction= randint(1,4)
+  def move_down(time):
+    while True:
+      sleep(time)
+      y1-=1
+      y2-=1
+      y3-=1
+      sense.set_pixel(x1,y1,w)
+      sense.set_pixel(x2,y2,w)
+      sense.set_pixel(x3,y3,r)
+
+    
+      
   if a_direction==1:
     y1=2
     x1=1
@@ -108,6 +127,11 @@ for turns in range(5):
     y3=2
     
   print a_direction
+  s_direction=0
+  score=0
+  lives=3
+  
+
     
     
     
@@ -118,14 +142,32 @@ for turns in range(5):
   sense.set_pixel(x1,y1,w)
   sense.set_pixel(x2,y2,w)
   sense.set_pixel(x3,y3,r)
+  
 
-
-  if e.direction== DIRECTION_UP:
+  while y2>6:
+    print "hi"
+    e = wait_for_move()
+    sleep(1)
+    y1+=1
+    y2+=1
+    y3+=1
+    sense.set_pixel(x1,y1,w)
+    sense.set_pixel(x2,y2,w)
+    sense.set_pixel(x3,y3,r)
+    print y1
+    print y2
+    print y3
     
-  elif e.direction == DIRECTION_DOWN and y<7:
-    y=y+1
-  elif e.direction == DIRECTION_LEFT and x>0:
-    x= x - 1
-  elif e.direction == DIRECTION_RIGHT and x<7:
-    x=x+1
-
+    
+    if e.direction == DIRECTION_MIDDLE and s_direction == a_direction and y2==6:
+      score+=1
+      sense.clear()
+      
+    elif y2!=6 and e.direction == DIRECTION_MIDDLE:
+      lives -= 1
+      sense.show_message("Lives = " +str(lives), scroll_speed= .03, text_colour=r)
+      sense.clear()
+    
+      
+    
+      
