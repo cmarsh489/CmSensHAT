@@ -103,7 +103,7 @@ def s_down():
     sy2=6
     sx3=6
     sy3=5
-    sx4=3
+    sx4=6
     sy4=4
     sx5=5
     sy5=5
@@ -136,7 +136,7 @@ def s_right():
     sy4=5
     sx5=5
     sy5=4
-    sx6=4
+    sx6=5
     sy6=6
     set_sword()
 
@@ -155,17 +155,17 @@ def s_left():
     global sy6
     
     s_direction=4
-    sx1=3
+    sx1=4
     sy1=5
-    sx2=4
+    sx2=5
     sy2=5
     sx3=6
     sy3=5
     sx4=7
     sy4=5
-    sx5=5
+    sx5=6
     sy5=6
-    sx6=4
+    sx6=6
     sy6=4
     set_sword()
   
@@ -361,29 +361,29 @@ for turns in range(3):
         
         break;
       e = wait_for_move()
-     if e.direction== DIRECTION_UP:
+      if e.direction== DIRECTION_UP:
             
         s_up()
-     elif e.direction == DIRECTION_DOWN:
+      elif e.direction == DIRECTION_DOWN:
         
          s_down()
-     elif e.direction == DIRECTION_LEFT:
+      elif e.direction == DIRECTION_LEFT:
          s_left()
-     elif e.direction == DIRECTION_RIGHT:
+      elif e.direction == DIRECTION_RIGHT:
          s_right()
           
-     if e.direction == DIRECTION_MIDDLE and s_direction == a_direction and y2==6:
+      if e.direction == DIRECTION_MIDDLE and s_direction == a_direction and y2==6:
          score+=1
          sense.clear()
          break
-     elif y2!=6 and e.direction == DIRECTION_MIDDLE:
+      elif y2!=6 and e.direction == DIRECTION_MIDDLE:
          lives -= 1
          sense.show_message("Lives = " +str(lives), scroll_speed= .02, text_colour=r)
           
          sense.clear()
             
-     else:
-            sense.clear()
+      else:
+        sense.clear()
         if y3 ==7 or y1==7:
             lives -= 1
             sense.show_message("Lives = " +str(lives), scroll_speed= .02, text_colour=r)
@@ -446,4 +446,3 @@ for turns in range(3):
             break;
             
           
-        
